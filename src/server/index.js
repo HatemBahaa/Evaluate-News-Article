@@ -22,7 +22,7 @@ app.use(express.static('dist'))
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('dist/index.html'))
 })
 
 // designates what port the app will listen to for incoming requests
@@ -38,7 +38,7 @@ app.post('/api', async(req, res) => {
     const urlOnTest = req.body.urlOnTest;
     const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.api_Key}&url=${urlOnTest}&lang=en`)
     const receivedData = await response.json()
-
+    
     return res.send(receivedData)     
 })
 
