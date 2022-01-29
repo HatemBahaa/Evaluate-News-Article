@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                Evaluate-News-Article
+            </div>
+            <div class="nav">
+                <ul id='nav-list'>
+                    <li class="nav-item">item 1</li>
+                    <li class="nav-item">item 2</li>
+                    <li class="nav-item">item 3</li>
+                    <li class="nav-item">item 4</li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Please enter your url">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            </section>
+
+            <section id="results">
+                <strong>Form Results:</strong>
+                <ul class="info-list">
+                    <li id='subjectivity'></li>
+                    <li id='irony'></li>
+                    <li id='score_tag'></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>evaluate-news-articl@2022</p>
+        </footer>
+
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => { navigator.serviceWorker.register('/service-worker.js'); });
+            }
+        </script>  
+
+    </body>
+</html>
